@@ -36,7 +36,7 @@
 #include <opm/material/components/SimpleH2O.hpp>
 #include <opm/material/components/TabulatedComponent.hpp>
 #include <opm/material/binarycoefficients/H2O_N2.hpp>
-#include <opm/material/common/Valgrind.hpp>
+//#include <opm/material/common/Valgrind.hpp>
 
 #include <opm/common/Exceptions.hpp>
 #include <opm/common/ErrorMacros.hpp>
@@ -79,9 +79,11 @@ public:
 
     //! Index of the liquid phase
     static const int liquidPhaseIdx = 0;
+    static const int wPhaseIdx = 0;
     //! Index of the gas phase
     static const int gasPhaseIdx = 1;
-
+    static const int nPhaseIdx = 1;
+    
     //! \copydoc BaseFluidSystem::phaseName
     static const char *phaseName(unsigned phaseIdx)
     {
@@ -142,8 +144,10 @@ public:
 
     //! The component index of water
     static const int H2OIdx = 0;
+    static const int wCompIdx = 0;
     //! The component index of molecular nitrogen
     static const int N2Idx = 1;
+    static const int nCompIdx = 1;
 
     //! The component for pure water
     typedef TabulatedH2O H2O;
